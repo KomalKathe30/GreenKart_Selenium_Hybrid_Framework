@@ -1,0 +1,7 @@
+/target/
+/test-output/
+/node_modules/
+/*.log
+/.idea/
+/.settings/
+*.class
