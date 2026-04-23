@@ -4,4 +4,11 @@
 /*.log
 /.idea/
 /.settings/
+
+/screenshots/
+/reports/
+/allure-results/
+/logs/
+
+*.tmp
 *.class
