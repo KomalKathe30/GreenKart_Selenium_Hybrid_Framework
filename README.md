@@ -195,37 +195,50 @@ Build file: `pom.xml`
 This framework follows a structured execution flow using TestNG, data-driven inputs, and a keyword-driven engine.
 
 📌 Step-by-Step Flow
-Test Execution Trigger
-Execution starts via mvn test or testng.xml
+Test Execution Trigger Execution
+
+starts via mvn test or testng.xml
+
 TestNG controls lifecycle using:
+
 @BeforeMethod
 @Test
 @AfterMethod
+
 Test Setup (BaseTest)
 Initializes browser using ThreadLocal WebDriver
 Opens base URL
+
 Test Case Execution (SearchTest)
 Executes test method (e.g., SearchTestCase)
 Maps to test case ID (TC1, TC2…)
+
 Data Fetching (ExcelUtils)
 Reads steps from testdata.xlsx
 Converts into executable steps
+
 Keyword Execution (KeywordEngine)
 Iterates each step
 Maps keywords → actions
+
 Page Interaction (POM Layer)
 Executes actions via HomePage methods
+
 Reporting & Logging (TestListener)
 Logs steps in ExtentReports
 Captures screenshots on failure
+
 Teardown
 Closes browser
+
 ⚡ Parallel Execution
 Runs using: parallel="methods"
 Thread-safe using:
 ThreadLocal<WebDriver>
 ThreadLocal<ExtentTest>
-✅ Execution Summary
+
+✅ Execution Summary 
+
 TestNG → BaseTest → Test Class → Excel Data → Keyword Engine → Page Actions → Reporting → Cleanup
 
 ## 10) How to Run
