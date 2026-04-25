@@ -194,37 +194,38 @@ Build file: `pom.xml`
 
 This framework follows a structured execution flow using TestNG, data-driven inputs, and a keyword-driven engine.
 
-Step-by-Step Flow
+📌 Step-by-Step Flow
 Test Execution Trigger
-Execution starts via mvn test or testng.xml.
-TestNG controls lifecycle using annotations like @BeforeMethod, @Test, and @AfterMethod [1
-].
+Execution starts via mvn test or testng.xml
+TestNG controls lifecycle using:
+@BeforeMethod
+@Test
+@AfterMethod
 Test Setup (BaseTest)
-@BeforeMethod initializes browser using ThreadLocal WebDriver.
-Navigates to base URL and prepares test environment.
+Initializes browser using ThreadLocal WebDriver
+Opens base URL
 Test Case Execution (SearchTest)
-Test method starts (e.g., SearchTestCase).
-Each test maps to a test case ID (TC1, TC2, etc.).
+Executes test method (e.g., SearchTestCase)
+Maps to test case ID (TC1, TC2…)
 Data Fetching (ExcelUtils)
-Reads test steps from testdata.xlsx.
-Converts them into executable steps.
+Reads steps from testdata.xlsx
+Converts into executable steps
 Keyword Execution (KeywordEngine)
-Iterates through each step.
-Maps keywords (e.g., searchItem, clickAddToCart) to actions.
+Iterates each step
+Maps keywords → actions
 Page Interaction (POM Layer)
-Executes actions via HomePage methods using Selenium WebDriver.
+Executes actions via HomePage methods
 Reporting & Logging (TestListener)
-Logs test steps using ExtentReports.
-Captures screenshots on failure.
+Logs steps in ExtentReports
+Captures screenshots on failure
 Teardown
-@AfterMethod closes browser and cleans up resources.
+Closes browser
 ⚡ Parallel Execution
-Tests run in parallel (parallel="methods").
-Thread safety ensured using:
+Runs using: parallel="methods"
+Thread-safe using:
 ThreadLocal<WebDriver>
 ThreadLocal<ExtentTest>
 ✅ Execution Summary
-
 TestNG → BaseTest → Test Class → Excel Data → Keyword Engine → Page Actions → Reporting → Cleanup
 
 ## 10) How to Run
