@@ -188,6 +188,8 @@ Main libraries:
 
 Build file: `pom.xml`
 
+![Report Screenshot](https://github.com/user-attachments/assets/c1d2c3a1-3197-487b-8843-a110412c98d9)
+
 ---
 
 🔄 Test Execution Flow
